@@ -1,33 +1,26 @@
 footer
-  background: url(../img/hero-bg.jpg) center center
-  background-size: cover
-  +clearfix
+  @extend %bg-img
 
   .lockup
     padding: 50px 30px
 
-  .logo
-    +size(50px)
-    float: left
-    padding-right: 50px
-    path
-      fill: $header
+    .content-wrap
+    float      : left
+    margin-left: 80px
 
-  .content-wrap
-    float: left
+    p.copyright
+      margin        : 0px
+      text-transform: uppercase
+      color         : $header
 
-  p.copyright
-    margin: 0px
-    text-transform: uppercase
-    color: $header
+    nav
+      a
+        display     : inline-block
+        margin-right: 30px
 
-  nav
-    a
-      display: inline-block
-      margin-right: 30px
+        color: $header
+        @extend %small-bold
 
-      color: $header
-      @extend %small-bold
-
-      &:hover
-        color: $black
+        &:hover,
+        &:focus
+          color: $black

@@ -1,49 +1,48 @@
 header
-  height: 450px
-  background: url(../img/hero-bg.jpg) center center
-  background-size: cover
-
-  .logo
-    +size(50px)
-    float: left
-    margin: 10px 0 0 30px
-    path
-      fill: $header
+  @extend %bg-img
+  background-position: 30px 15px, 50% 50%
+  height             : 450px
 
   nav
-    float: right
+    float : right
     margin: 30px 30px 0 0
 
     a
-      display: inline-block
+      display    : inline-block
       margin-left: 30px
 
       color: $header
       @extend %small-bold
 
-      &:hover
-        color: $black
+      &:hover,
+      &:focus
+        color: $hover
 
   h1
-    text-align: center
-    font:
-      size: 72px
-      weight: 700
-    color: $white
+    text-align    : center
+    font          :
+      size        : 72px
+      weight      : 700
+    color         : $white
     text-transform: uppercase
     letter-spacing: 0.05em
-    margin-bottom: 20px
-    clear: both
-    padding-top: 100px
+    margin-bottom : 20px
+    clear         : both
+    padding-top   : 100px
 
     span
       display: inline-block
       padding: .2em .5em
-      border: $white solid 10px
+      border : $white solid 10px
 
   .kicker
-    text-align: center
+    text-align    : center
     @extend %small-bold
     letter-spacing: .05em
-    color: $white
-    line-height: 1
+    color         : $white
+    line-height   : 1
+
+@media screen and (max-width: 520px)
+  header
+    nav
+      margin-top: 80px
