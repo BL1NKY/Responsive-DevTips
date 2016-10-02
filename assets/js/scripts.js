@@ -3,6 +3,7 @@ $(document).ready(function () {
   smoothScroll(1000);
   workBelt();
   workLoad();
+  clientBelt();
 
 });
 function smoothScroll (duration) {
@@ -47,4 +48,16 @@ function workLoad() {
     $(".project-title").text(newTitle)
   });
 
+}
+
+function clientBelt() {
+
+  $(".client-logo").click(function () {
+    var $this = $(this),
+        $siblings = $this.parent().children(),
+        $position = $siblings.index($this);
+    $(".client-unit").removeClass("active-client").eq($position).addClass("active-client");
+    $(".client-logo").removeClass("active-client").eq($position).addClass("active-client");
+
+  });
 }

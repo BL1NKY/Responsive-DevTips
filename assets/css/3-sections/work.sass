@@ -28,7 +28,7 @@ section.work-section
           float: left
           position: relative
           padding-top: 15%
-          overflow: hidden
+          // overflow: hidden
 
           @media screen and (max-width: 760px)
             width: 50%
@@ -41,16 +41,14 @@ section.work-section
                 position: center center
                 repeat: no-repeat
                 size: cover
-              +perspective(300)
 
           .thumb-overlay
             +position(absolute, 0% 0px null 0px)
             height: 100%
             background: fade-out(darken($accent-dark, 35%), .1)
-            +transition
-            +transform(rotateX(90deg))
-            +transform-origin(center bottom)
+            +transform(matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
             opacity: 0
+            // +transition(opacity, 700ms, ease-in, 300ms)
 
             strong
               text-align: center
@@ -63,11 +61,13 @@ section.work-section
               font-size: 24px
               line-height: 1.2
 
-          &:hover .thumb-overlay
-            +position(absolute, 0% 0px null 0px)
-            +transform(rotateX(0deg))
-            opacity: 1
-            cursor: pointer
+          &:hover
+            z-index: 1
+
+            .thumb-overlay
+              @extend %animation
+              opacity: 1
+              cursor: pointer
 
     .work-wrap
       .work-container
