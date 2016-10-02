@@ -1,4 +1,4 @@
-header
+header.header
   @extend %bg-img
   background-position: 30px 15px, 50% 50%
   height             : 450px
@@ -46,3 +46,13 @@ header
   header
     nav
       margin-top: 80px
+
+@media screen and (max-width: 480px)
+  header
+    h1
+      font-size: 54px
+
+@media screen and (max-width: 320px)
+  header
+    h1
+      font-size: 36px

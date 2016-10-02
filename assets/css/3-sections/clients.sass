@@ -1,0 +1,103 @@
+section.client-section
+  position: relative
+
+  h3
+    @extend %h3
+
+  .clients-belt
+    width: 100%
+    position: relative
+
+    .client-unit
+      max-width: 740px
+      margin: 0 0 50px -370px
+      +position(absolute, 0px null null 50%)
+      z-index: 1
+      +display(flex)
+      display: none
+      &.active-client
+        display: flex
+
+      .client-face
+        min-width: 300px
+        text-align: center
+
+        img
+          max-width: 128px
+          border-radius: 50%
+
+        .client-name
+          display: block
+          text-transform: uppercase
+          font-weight: 400
+          letter-spacing: 1px
+
+        .client-title
+          font-style: normal
+          font-size: 12px
+          color: $textColorLight
+
+      .client-content
+        font-size: 18px
+        line-height: 36px
+        font-weight: 300
+        margin-top: -10px
+        position: relative
+
+        .client-quote-mark
+          +position(absolute, -18px null null -15px)
+          +size(60px)
+          z-index: -1
+          opacity: .4
+
+          svg
+            path
+              fill: $accent
+
+  .client-logos
+    position: relative
+    max-width: 740px
+    margin: 0 auto 100px
+    margin-top: 400px
+    +display(flex)
+    +align-items(space-around)
+    +justify-content(center)
+
+    .client-logo
+      height: 80px
+      min-width: 200px
+      @for $i from 1 through 4
+        &.logo-#{$i}
+          background:
+            image: url(/assets/img/clients/logo#{$i}.png)
+            size: contain
+            position: center
+            repeat: no-repeat
+      // background:
+      //   image: url(/assets/img/clients/logo1.png)
+      //   size: contain
+      //   position: center
+      //   repeat: no-repeat
+      cursor: pointer
+      margin: 0 20px
+
+      &.active-client
+        box-shadow: 0px 4px 0 0px $accent
+
+  .client-controls
+    +position(absolute, 0px 0px 0px 0px)
+    > div
+      overflow: hidden
+      +size(40px)
+      svg
+        path
+          fill: $accent
+      &:hover
+        cursor: pointer
+
+    .client-controls-next
+      +position(absolute, 50% 10px null null)
+      transform: translateY(-50%)
+    .client-controls-prev
+      +position(absolute, 50% null null 10px)
+      transform: translateY(-50%)
