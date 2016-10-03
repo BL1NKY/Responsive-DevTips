@@ -363,7 +363,9 @@
 
         <hr class="bar">
 
-        <a class="big-link" href="mailto:tobias.unger1@gmx.de">tobias.unger1@gmx.de</a>
+        <div class="mail">
+          <a class="big-link" href="mailto:tobias.unger1@gmx.de"><h1>tobias.unger1@gmx.de</h1></a>
+        </div>
 
       </section>
 
@@ -372,16 +374,21 @@
         <h3>Let's work together</h3>
 
         <form method="post" action="--//--forms.brace.io/--insert Email Here @email.com">
-          <label for="text"><span>Your Name</span>
-          <input type="text" name="name"></label>
 
-          <label for="email"><span>Your Email</span>
-          <input type="email" name="_replyto"></label>
+          <div class="form-contact">
+            <label for="text"><span>Your Name</span>
+            <input type="text" name="name"></label>
+
+            <label for="email"><span>Your Email</span>
+            <input type="email" name="_replyto"></label>
+          </div>
 
           <label for="message"><span>Tell me about your Project</span>
-          <textarea name="message" rows="8" cols="40"></textarea></label>
+          <textarea name="message"></textarea></label>
 
-          <input type="submit" value="Send">
+          <div class="submit">
+            <input type="submit" value="Send">
+          </div>
         </form>
 
       </section>

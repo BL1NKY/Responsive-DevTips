@@ -1,13 +1,11 @@
 header.header
   @extend %bg-img
   background-position: 30px 15px, 50% 50%
-  height             : 450px
+  padding-bottom: 50px
 
   nav
     float : right
-    margin: 30px 30px 0 0
-    @media screen and (max-width: 520px)
-      margin-top: 80px
+    padding: 30px 30px 0 0
 
     a
       display    : inline-block
@@ -31,16 +29,12 @@ header.header
     margin-bottom : 20px
     clear         : both
     padding-top   : 100px
-    @media screen and (max-width: 480px)
-      font-size: 54px
-
-    @media screen and (max-width: 320px)
-      font-size: 36px
 
     span
       display: inline-block
       padding: .2em .5em
       border : $white solid 10px
+      margin: 0px 15px
 
   .kicker
     text-align    : center
@@ -48,3 +42,16 @@ header.header
     letter-spacing: .05em
     color         : $white
     line-height   : 1
+
+  @media screen and (max-width: 520px)
+    background-position: 50% 15px, 50% 50%
+    nav
+      float: none
+      text-align: center
+      padding: 80px 0px 0px
+
+      a
+        margin: 0px 15px
+
+    h1
+      padding-top: 0px

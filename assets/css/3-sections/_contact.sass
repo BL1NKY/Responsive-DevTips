@@ -30,16 +30,22 @@ section.contact-section
     border-top: 4px solid $accent
     margin: 0px auto 75px
 
-  .big-link
-    display: inline-block
-    font:
-      size: 72px
-      weight: 300
-    line-height: 1
-    margin-bottom: 75px
-    @media (max-width: 800px)
-      font-size: 48px
-    @media (max-width: 540px)
-      font-size: 32px
-    @media (max-width: 380px)
-      font-size: 24px
+  .mail
+    width: 100%
+    padding-bottom: 75px
+    max-width: 700px
+    margin: 15px auto
+    .big-link
+      h1
+        margin: 0
+        color: $linkColor
+        text-decoration: none
+        outline: 0
+        font:
+          size: 72px
+          weight: 300
+        line-height: 1
+
+        &:hover,
+        &:focus
+          color: $accent-dark
