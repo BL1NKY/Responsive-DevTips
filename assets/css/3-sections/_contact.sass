@@ -1,0 +1,45 @@
+section.contact-section
+  text-align: center
+
+  h3
+    @extend %h3
+
+  .social
+    max-width: 700px
+    margin: 0px auto 50px
+    +display(flex)
+    +justify-content(space-around)
+
+    a
+      display: block
+      background-color: $accent
+      +size(50px)
+      text-align: center
+      line-height: 50px
+      color: $white
+      border-radius: 50%
+      +transition
+
+      &:hover
+        +transform(scale(1.2))
+        background-color: $accent-dark
+
+  .bar
+    width: 250px
+    height: 0px
+    border-top: 4px solid $accent
+    margin: 0px auto 75px
+
+  .big-link
+    display: inline-block
+    font:
+      size: 72px
+      weight: 300
+    line-height: 1
+    margin-bottom: 75px
+    @media (max-width: 800px)
+      font-size: 48px
+    @media (max-width: 540px)
+      font-size: 32px
+    @media (max-width: 380px)
+      font-size: 24px
