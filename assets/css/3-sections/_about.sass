@@ -78,35 +78,31 @@ section.about-section
   background-color: $bgColor
 
 @media screen and (max-width: 650px)
-  section.about-section
+  .face-lockup
+    display   : block
+    text-align: center
 
-    .face-lockup
-      display   : block
-      text-align: center
+    div
+      display            : inline-block
 
-      div
-        display            : inline-block
+    [class^="icon-"]
+      margin             : 10px
 
-      [class^="icon-"]
-        margin             : 10px
+    .face-img
+      display            : block
+      background-position: center center
+      background-repeat  : no-repeat
+      border-radius      : 50%
+      width              : 200px
+      margin             : 0 auto
+      margin-bottom      : 30px
 
-      .face-img
-        display            : block
-        background-position: center center
-        background-repeat  : no-repeat
-        border-radius      : 50%
-        width              : 200px
-        margin             : 0 auto
-        margin-bottom      : 30px
-
-@media screen and (max-width: 800px)
-  section.about-section
-    .skill-lockup
-      width: 400px
+@media screen and (max-width: 760px)
+  .skill-lockup
+    width: 380px
 
 @media screen and (max-width: 480px)
-  section.about-section
-    .skill-lockup
-      width: 240px
-      .skill-unit
-        width: auto
+  .skill-lockup
+    width: 240px
+    .skill-unit
+      width: auto

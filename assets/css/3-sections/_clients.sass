@@ -10,11 +10,13 @@ section.client-section
 
     .client-unit
       max-width: 740px
-      margin: 0 0 50px -370px
-      +position(absolute, 0px null null 50%)
+      margin: 50px auto
+      // +position(absolute, 0px null null 50%)
+      position: relative
       z-index: 1
       +display(flex)
       display: none
+      @extend %animation
       &.active-client
         display: flex
 
@@ -57,32 +59,21 @@ section.client-section
   .client-logos
     position: relative
     max-width: 740px
-    margin: 0 auto 100px
-    margin-top: 22%
+    margin: 50px auto 100px
     +display(flex)
-    +align-items(space-around)
-    +justify-content(center)
+    +align-items(flex-end)
+    +justify-content(space-around)
 
     .client-logo
-      height: 80px
-      min-width: 200px
-      @for $i from 1 through 4
-        &.logo-#{$i}
-          background:
-            image: url(/assets/img/clients/logo#{$i}.png)
-            size: contain
-            position: center
-            repeat: no-repeat
-      // background:
-      //   image: url(/assets/img/clients/logo1.png)
-      //   size: contain
-      //   position: center
-      //   repeat: no-repeat
       cursor: pointer
       margin: 0 20px
+      padding-bottom: 10px
+      border-bottom: 4px solid transparent
+      opacity: .3
 
       &.active-client
-        box-shadow: 0px 4px 0 0px $accent
+        border-bottom: 4px solid $accent
+        opacity: 1
 
   .client-controls
     +position(absolute, 0px 0px 0px 0px)
@@ -101,3 +92,47 @@ section.client-section
     .client-controls-prev
       +position(absolute, 50% null null 10px)
       transform: translateY(-50%)
+
+  .clients-mobile
+    text-align: center
+    display: none
+
+    span
+      cursor: pointer
+      display: inline-block
+      +size(16px)
+      border-radius: 50%
+      border: 2px solid $bgColor
+      margin: 0px 10px
+      &.active-client
+        border-color: $accent
+
+
+  @media (max-width: 760px)
+    .client-controls
+      display: none
+
+    .client-logos
+      display: none
+
+    .clients-mobile
+      display: block
+
+    .clients-belt
+
+      .client-unit.active-client
+        display: block
+        position: relative
+        margin-left: 0px
+        left: auto
+
+        .client-face
+          margin-bottom: 20px
+
+        .client-content
+          padding: 0px 30px
+          max-width: 400px
+          margin: 0 auto
+
+        .client-quote-mark
+          left: 15px

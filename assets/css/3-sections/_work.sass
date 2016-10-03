@@ -82,6 +82,8 @@ section.work-section
           font-size: 24px
           line-height: 1.2
           margin-top: 0
+          @media screen and (max-width: 890px)
+            margin-left: 60px
 
         .img
           max-width: 100%
@@ -92,6 +94,8 @@ section.work-section
           cursor: pointer
           overflow: hidden
           +position(absolute, -6.5px null null -60px)
+          @media screen and (max-width: 890px)
+            left: 0px
 
           path
             fill: $accent
@@ -100,14 +104,3 @@ section.work-section
 
             path
               fill: lighten($accent, 10%)
-
-@media screen and (max-width: 890px)
-  section.work-section
-    .work-belt
-      .work-wrap
-        .work-container
-          h4
-            margin-left: 60px
-
-          .work-return
-            left: 0px

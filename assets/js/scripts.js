@@ -52,12 +52,37 @@ function workLoad() {
 
 function clientBelt() {
 
-  $(".client-logo").click(function () {
+  $(".client-logo, .clients-mobile span").click(function () {
     var $this = $(this),
         $siblings = $this.parent().children(),
         $position = $siblings.index($this);
     $(".client-unit").removeClass("active-client").eq($position).addClass("active-client");
     $(".client-logo").removeClass("active-client").eq($position).addClass("active-client");
+    $(".clients-mobile span").removeClass("active-client").eq($position).addClass("active-client");
+  });
 
+  $(".client-controls-next, .client-controls-prev").click(function () {
+
+    var $this = $(this),
+        $curActive = $(".clients-belt").find(".active-client"),
+        $position = $(".clients-belt").children().index($curActive),
+        $clientLength = $(".client-unit").length;
+
+        if($this.hasClass("client-controls-next")){
+          if($position < $clientLength - 1){
+            $(".active-client").removeClass("active-client").next().addClass("active-client");
+          } else {
+            $(".client-unit").removeClass("active-client").first().addClass("active-client");
+            $(".client-logo").removeClass("active-client").first().addClass("active-client");
+        }
+      } else {
+
+        if($position === 0){
+          $(".client-unit").removeClass("active-client").last().addClass("active-client");
+          $(".client-logo").removeClass("active-client").last().addClass("active-client");
+        }else {
+          $(".active-client").removeClass("active-client").prev().addClass("active-client");
+        }
+      }
   });
 }
